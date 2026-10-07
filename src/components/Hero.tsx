@@ -2,10 +2,11 @@ import React from 'react';
 import { ArrowRight, BookOpen, PenTool } from 'lucide-react';
 
 interface HeroProps {
-  onActionClick: (action: string) => void;
+  onOpenWrite: () => void;
+  onActionClick?: (action: string) => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onActionClick }) => {
+export const Hero: React.FC<HeroProps> = ({ onOpenWrite }) => {
   return (
     <section id="home" className="bg-slate-50 border-b border-slate-200 py-16 sm:py-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
@@ -37,7 +38,7 @@ export const Hero: React.FC<HeroProps> = ({ onActionClick }) => {
           </a>
 
           <button
-            onClick={() => onActionClick('Start Writing')}
+            onClick={onOpenWrite}
             className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium text-sm text-slate-700 bg-white hover:bg-slate-100 border border-slate-300 shadow-sm transition"
           >
             <PenTool className="w-4 h-4 text-slate-500" />
